@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#41582e" />
+    <title>Fly Renegade Air - Daily Flights to Kisumu and Wajir</title>
+    <meta
+      name="description"
+      content="Book daily Renegade Air flights to Kisumu and Wajir, Kenya."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="svg-definitions" aria-hidden="true" focusable="false">
+      <symbol id="whatsapp-mark" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.711.226 1.358.194 1.87.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.893-9.884 2.645.002 5.13 1.03 6.997 2.899a9.825 9.825 0 0 1 2.895 6.996c-.003 5.45-4.437 9.881-9.902 9.881M20.52 3.48A11.815 11.815 0 0 0 12.013 0C5.398 0 .018 5.38.016 11.994c0 2.11.552 4.17 1.6 5.987L0 24l6.16-1.616a11.93 11.93 0 0 0 5.85 1.488h.005c6.615 0 11.995-5.38 11.998-11.995a11.9 11.9 0 0 0-3.493-8.397Z"/>
+      </symbol>
+    </svg>
+    <a class="skip-main" href="#main">Skip to Main Content</a>
+
+    <div class="utility-bar">
+      <div class="login-group">
+        <button class="login-link" type="button" data-login-mode="customer" aria-haspopup="dialog" aria-controls="loginDialog">
+          <svg aria-hidden="true" viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"></circle><path d="M2.5 15c.2-3.1 2.2-5 5.5-5s5.3 1.9 5.5 5"></path></svg>
+          <span class="mobile-login-label">Login</span><span class="desktop-login-label">Customer Login</span>
+        </button>
+        <button class="agent-login" type="button" data-login-mode="agent" aria-haspopup="dialog" aria-controls="loginDialog">Agent Login</button>
+        <button class="agent-login" type="button" data-login-mode="crs" aria-haspopup="dialog" aria-controls="loginDialog">Agent CRS Login</button>
+      </div>
+      <div class="locale-options">
+        <div class="locale-control currency-control">
+          <button class="currency-link" id="currencyToggle" type="button" aria-expanded="false" aria-controls="currencyMenu">
+            <span class="currency-symbol">KES</span><span class="currency-code">KES</span><span class="caret"></span>
+          </button>
+          <div class="locale-popover" id="currencyMenu" hidden aria-label="Choose currency">
+            <button type="button" data-currency="KES" data-symbol="KES" hidden><span>KES</span> Kenyan Shilling</button>
+            <button type="button" data-currency="USD" data-symbol="$"><span>$</span> US Dollar (USD)</button>
+          </div>
+        </div>
+        <div class="locale-control language-control">
+          <button class="language-link" id="languageToggle" type="button" aria-expanded="false" aria-controls="languageMenu">
+            <span class="language-label">English</span><span class="caret"></span>
+          </button>
+          <div class="locale-popover" id="languageMenu" hidden aria-label="Choose language">
+            <button type="button" data-language="en" hidden>English</button>
+            <button type="button" data-language="es">Spanish</button>
+          </div>
+        </div>
+      </div>
+      <p class="utility-status" id="utilityStatus" role="status" hidden></p>
+    </div>
+
+    <dialog class="login-dialog" id="loginDialog" aria-labelledby="loginDialogTitle">
+      <div class="login-dialog-content">
+        <div class="login-dialog-heading">
+          <h2 id="loginDialogTitle">Customer Login</h2>
+          <button class="login-dialog-close" type="button" aria-label="Close login dialog" data-login-close>×</button>
+        </div>
+        <div class="login-dialog-tabs" role="tablist" aria-label="Login type">
+          <button type="button" role="tab" data-login-mode="customer" aria-selected="true">Customer</button>
+          <button type="button" role="tab" data-login-mode="agent" aria-selected="false">Agent</button>
+          <button type="button" role="tab" data-login-mode="crs" aria-selected="false">Agent CRS</button>
+        </div>
+        <p class="login-dialog-copy" id="loginDialogCopy" aria-live="polite">
+          Customer sign-in is unavailable in this local copy. Contact Renegade Air on WhatsApp for account help.
+        </p>
+        <a class="login-dialog-link" id="loginDialogLink" href="https://wa.me/254738021474?text=Hello%20Renegade%20Air%2C%20I%20need%20help%20with%20customer%20account%20access.">
+          Ask Renegade Air on WhatsApp
+        </a>
+        <p class="login-dialog-note">Authentication is not available in this local copy.</p>
+      </div>
+    </dialog>
+
+    <header class="site-header">
+      <a class="brand" href="#main" aria-label="Renegade Air home">
+        <img src="https://storage.aerocrs.com/329/system/logo300x100.png" alt="RenegadeAir — Be different" />
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open header menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary Menu">
+        <ul class="primary-nav-list">
+          <li class="nav-item">
+            <button class="nav-dropdown-toggle" id="aboutMenuToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="aboutMenu">About Us</button>
+            <ul class="nav-dropdown" id="aboutMenu" aria-label="About Us" hidden>
+              <li><span class="nav-dropdown-label">Our Careers</span></li>
+              <li><a href="#magazine">Our Magazine</a></li>
+              <li><span class="nav-dropdown-label">Our Fleet</span></li>
+              <li><span class="nav-dropdown-label">App Privacy Policy</span></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <button class="nav-dropdown-toggle" id="travelMenuToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="travelMenu">Travel Information</button>
+            <ul class="nav-dropdown" id="travelMenu" aria-label="Travel Information" hidden>
+              <li><a href="#information">Dangerous Goods</a></li>
+              <li><a href="#information">Baggage Terms</a></li>
+              <li><a href="#information">CSR</a></li>
+              <li><a href="#information">Checkin Policy</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <button class="nav-dropdown-toggle" id="servicesMenuToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="servicesMenu">Services</button>
+            <ul class="nav-dropdown" id="servicesMenu" aria-label="Services" hidden>
+              <li><a href="#booking">Scheduled Flights</a></li>
+              <li><a href="#services">ACMI Leasing</a></li>
+              <li><a href="#services">Private Charters</a></li>
+              <li><a href="#services">Relief Services</a></li>
+              <li><a href="#services">Evacuation Flights</a></li>
+              <li><a href="#services">TRIPS</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <button class="nav-dropdown-toggle" id="destinationsMenuToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="destinationsMenu">Destinations</button>
+            <ul class="nav-dropdown" id="destinationsMenu" aria-label="Destinations" hidden>
+              <li><a href="#destination-kisumu">Fly to Kisumu</a></li>
+              <li><a href="#destination-wajir">Fly to Wajir</a></li>
+              <li><a href="#destination-mara">Fly to Masai Mara</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#frequent-flyer">Frequent Flyer</a>
+          </li>
+          <li class="nav-item">
+            <button class="nav-dropdown-toggle" id="contactMenuToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="contactMenu">Contact Us</button>
+            <ul class="nav-dropdown" id="contactMenu" aria-label="Contact Us" hidden>
+              <li><a href="#contact">Find us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="booking-shell" id="booking">
+        <div class="booking-tabs" role="tablist" aria-label="Flight booking options">
+          <button class="booking-tab active" id="flightTab" type="button" role="tab" aria-selected="true" aria-controls="flightPanel">
+            <svg aria-hidden="true" viewBox="0 0 40 30"><path d="M2 19.5 14 17 7 7.5l4-1.2 12 9 10-2.2c2.8-.6 4.7.3 5.1 1.9.4 1.6-.9 3.1-3.6 3.8l-24 6.1c-4.1 1-7.4-.2-8.5-2.2-.7-1.2.1-2.5 2-3.4Z"></path></svg>
+            <span>Book Flight</span>
+          </button>
+          <button class="booking-tab reservation-tab" id="reservationTab" type="button" role="tab" aria-selected="false" aria-controls="reservationPanel">
+            <svg aria-hidden="true" viewBox="0 0 30 34"><path d="M7 2h12l6 6v24H7zM19 2v7h6M11 15h10M11 20h10M11 25h7"></path></svg>
+            <span>Find Reservation</span>
+          </button>
+        </div>
+
+        <section class="booking-panel" id="flightPanel" role="tabpanel" aria-labelledby="flightTab">
+          <form class="flight-form" id="flightForm">
+            <label class="trip-type">
+              <span class="sr-only">Trip type</span>
+              <select id="tripType" name="tripType">
+                <option value="roundtrip">Roundtrip</option>
+                <option value="oneway">One-way</option>
+              </select>
+            </label>
+
+            <div class="route-fields">
+              <label class="airport-field">
+                <span>From</span>
+                <input id="flightFrom" name="from" type="text" list="airportOptions" autocomplete="off" required aria-label="From" />
+              </label>
+              <button class="swap-button" id="swapRoute" type="button" aria-label="Swap departure and destination" disabled>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 7a8 8 0 0 0-13-2L5 7m0-4v4h4m-5 6a8 8 0 0 0 13 2l2-2m0 4v-4h-4"></path></svg>
+              </button>
+              <label class="airport-field">
+                <span>To</span>
+                <input id="flightTo" name="to" type="text" list="airportOptions" autocomplete="off" required aria-label="To" />
+              </label>
+            </div>
+            <datalist id="airportOptions">
+              <option value="Nairobi"></option>
+              <option value="Eldoret"></option>
+              <option value="Kisumu"></option>
+              <option value="Mombasa"></option>
+              <option value="Homabay"></option>
+              <option value="Wajir"></option>
+              <option value="Maasai Mara"></option>
+            </datalist>
+
+            <div class="date-fields">
+              <label class="date-field">
+                <span>DEPART</span>
+                <input id="departDate" name="depart" type="date" required aria-label="Depart" />
+                <svg class="date-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4v3M19 4v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13H4V6a1 1 0 0 1 1-1ZM8 12h2M13 12h2M8 16h2M13 16h2"></path></svg>
+              </label>
+              <label class="date-field" id="returnField">
+                <span>RETURN</span>
+                <input id="returnDate" name="return" type="date" required aria-label="Return" />
+                <svg class="date-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4v3M19 4v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13H4V6a1 1 0 0 1 1-1ZM8 12h2M13 12h2M8 16h2M13 16h2"></path></svg>
+              </label>
+              <label class="passenger-field">
+                <span>PASSENGERS</span>
+                <select name="passengers" aria-label="Passengers">
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4">4 Passengers</option>
+                  <option value="5">5 Passengers</option>
+                  <option value="6">6 Passengers</option>
+                  <option value="7">7 Passengers</option>
+                  <option value="8">8 Passengers</option>
+                </select>
+              </label>
+            </div>
+
+            <p class="fare-estimate" id="fareEstimate" aria-live="polite">Select a supported route to see an estimated fare.</p>
+
+            <div class="coupon-row">
+              <svg class="coupon-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7.5 16 4l5 5-11 11-7-7z"></path><circle cx="7.5" cy="8" r="1" class="coupon-hole"></circle></svg>
+              <span>Have a coupon code?</span>
+              <button id="couponToggle" type="button" aria-expanded="false">Enter it here</button>
+              <input id="couponCode" name="coupon" type="text" placeholder="Coupon code" hidden />
+              <button class="coupon-check" id="couponCheck" type="button" hidden>Check</button>
+            </div>
+
+            <button class="submit-button" type="submit">Find flights</button>
+            <p class="form-message" id="flightMessage" role="status" hidden>
+              <span id="flightMessageText">Opening WhatsApp with your flight request.</span>
+              <a href="https://wa.me/254738021474">Open WhatsApp</a>.
+            </p>
+            <p class="form-message" id="couponMessage" role="status" hidden>
+              <span id="couponMessageText">Enter a coupon code before checking.</span>
+              <a href="https://wa.me/254738021474">Contact Renegade Air on WhatsApp</a>.
+            </p>
+          </form>
+        </section>
+
+        <section class="booking-panel reservation-panel" id="reservationPanel" role="tabpanel" aria-labelledby="reservationTab" hidden>
+          <form class="reservation-form" id="reservationForm">
+            <h1>Find Reservation</h1>
+            <label class="reservation-field booking-reference-field">
+              <span>Booking ref:</span>
+              <input name="bookingReference" type="text" autocomplete="off" required />
+            </label>
+            <label class="reservation-field last-name-field">
+              <span>Last Name</span>
+              <input name="lastName" type="text" autocomplete="family-name" required />
+            </label>
+            <button class="submit-button" type="submit">Search</button>
+            <p class="form-message" id="reservationMessage" role="status" hidden>
+              <span id="reservationMessageText">Opening WhatsApp with your reservation inquiry. Review and send to request help.</span>
+              <a href="https://wa.me/254738021474">Open WhatsApp</a>.
+            </p>
+          </form>
+        </section>
+      </div>
+
+      <section class="editorial-content" id="frequent-flyer" aria-label="Renegade Air updates">
+        <article class="magazine" id="magazine">
+          <p>Introducing The Renegade Magazine</p>
+          <p>Renegade Air is pleased to welcome you to its inaugural inflight magazine.This is the first of its kind for the airline and we shall have a new publication every quarter</p>
+          <a href="#fares">View fares</a>
+        </article>
+        <section class="destinations" id="destinations">
+          <h3>Cheap &amp; Affordable Local Flights</h3>
+          <h4>Book your daily flights to this destinations in Kenya</h4>
+          <div class="destination-notes">
+            <article class="destination-card destination-card-kisumu" id="destination-kisumu" aria-label="Kisumu flights">
+              <div class="destination-card-content">
+                <ul><li><small>We fly to Kisumu twice daily</small></li></ul>
+              </div>
+            </article>
+            <article class="destination-card destination-card-wajir" id="destination-wajir" aria-label="Wajir flights">
+              <div class="destination-card-content">
+                <ul><li><small>Daily Flights to Wajir</small></li></ul>
+              </div>
+            </article>
+            <article class="destination-card destination-card-mara" id="destination-mara" aria-label="Mara flights">
+              <div class="destination-card-content">
+                <ul><li><small>Daily Flights to the Mara</small></li></ul>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="fares-section" id="fares" aria-labelledby="fares-title">
+        <div class="fares-inner">
+          <p class="fares-kicker">Fly Renegade Air</p>
+          <h2 id="fares-title">Fares from Nairobi</h2>
+          <ul class="fares-list">
+            <li><button class="fare-option" type="button" data-destination="Eldoret"><span class="fare-route">Nairobi <span aria-hidden="true">→</span> Eldoret</span><strong class="fare-price">KSh 5,500</strong></button></li>
+            <li><button class="fare-option" type="button" data-destination="Kisumu"><span class="fare-route">Nairobi <span aria-hidden="true">→</span> Kisumu</span><strong class="fare-price">KSh 6,500</strong></button></li>
+            <li><button class="fare-option" type="button" data-destination="Mombasa"><span class="fare-route">Nairobi <span aria-hidden="true">→</span> Mombasa</span><strong class="fare-price">KSh 6,500</strong></button></li>
+            <li><button class="fare-option" type="button" data-destination="Homabay"><span class="fare-route">Nairobi <span aria-hidden="true">→</span> Homabay</span><strong class="fare-price">KSh 7,800</strong></button></li>
+            <li><button class="fare-option" type="button" data-destination="Wajir"><span class="fare-route">Nairobi <span aria-hidden="true">→</span> Wajir</span><strong class="fare-price">KSh 9,000</strong></button></li>
+            <li><button class="fare-option" type="button" data-destination="Maasai Mara"><span class="fare-route">Nairobi <span aria-hidden="true">→</span> Maasai Mara</span><strong class="fare-price">KSh 10,500</strong></button></li>
+          </ul>
+          <p class="fares-note">Listed fares are per passenger, one way. Round-trip estimates use the same fare in both directions and are multiplied by the number of passengers. Confirm the final fare with Renegade Air.</p>
+          <p class="fares-inquiry">
+            For booking or inquiry services:
+            <a href="https://wa.me/254738021474?text=Hello%20Renegade%20Air%2C%20I%27d%20like%20to%20ask%20about%20a%20flight." aria-label="Message Renegade Air on WhatsApp at 0738 021 474">
+              <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#whatsapp-mark"/></svg>
+              <span>WhatsApp 0738 021 474</span>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section class="photo-gallery" id="photo-gallery" aria-labelledby="photo-gallery-title">
+        <div class="photo-gallery-inner">
+          <h2 id="photo-gallery-title">Renegade Air in Pictures</h2>
+          <p class="photo-gallery-intro">Aircraft, people, and moments from Renegade Air.</p>
+          <div class="photo-gallery-grid">
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/01.jpg" aria-label="View full-size photo: Renegade Air aircraft at the runway">
+                <img src="images/renegade-gallery/01.jpg" alt="Renegade Air aircraft at the runway, with a fire engine nearby" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>On the runway</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/02.jpg" aria-label="View full-size photo: rear view of a Renegade Air aircraft">
+                <img src="images/renegade-gallery/02.jpg" alt="Rear view of a Renegade Air aircraft at the airfield" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Aircraft at the airfield</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/03.jpg" aria-label="View full-size photo: people beside a Renegade Air aircraft">
+                <img src="images/renegade-gallery/03.jpg" alt="Two people beside a Renegade Air aircraft" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Welcome aboard</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/04.jpg" aria-label="View full-size photo: Renegade Air aircraft on the runway">
+                <img src="images/renegade-gallery/04.jpg" alt="Renegade Air aircraft on a runway" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Ready for departure</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/05.jpg" aria-label="View full-size photo: Renegade Air representatives meeting">
+                <img src="images/renegade-gallery/05.jpg" alt="Renegade Air representatives meeting beside an aircraft" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Meeting on the airfield</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/06.jpg" aria-label="View full-size photo: aircraft and emergency response team">
+                <img src="images/renegade-gallery/06.jpg" alt="Renegade Air aircraft with an emergency response team nearby" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Airfield operations</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/07.jpg" aria-label="View full-size photo: crew member boarding a Renegade Air aircraft">
+                <img src="images/renegade-gallery/07.jpg" alt="Crew member boarding a Renegade Air aircraft" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Boarding the aircraft</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/08.jpg" aria-label="View full-size photo: Renegade Air aircraft at the airport">
+                <img src="images/renegade-gallery/08.jpg" alt="Renegade Air aircraft parked at an airport" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>At the airport</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/09.jpg" aria-label="View full-size photo: interview beside a Renegade Air aircraft">
+                <img src="images/renegade-gallery/09.jpg" alt="Interview taking place beside a Renegade Air aircraft" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Sharing our story</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/10.jpg" aria-label="View full-size photo: Renegade Air team members">
+                <img src="images/renegade-gallery/10.jpg" alt="Two Renegade Air team members standing beside an aircraft" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Our team</figcaption>
+            </figure>
+            <figure class="photo-gallery-card">
+              <a href="images/renegade-gallery/11.jpg" aria-label="View full-size photo: Renegade Air team member at a display">
+                <img src="images/renegade-gallery/11.jpg" alt="Renegade Air team member standing in front of aircraft displays" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>Behind the scenes</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <section class="footer-about" id="about">
+          <a class="footer-logo" href="#main"><img src="https://storage.aerocrs.com/329/system/logo-renegade.png" alt="Renegade Air" /></a>
+          <p>We provide safe dependable and cost effective air transport solutions to a diversity ©</p>
+          <div class="footer-store-row">
+            <p class="footer-year">2026</p>
+            <a class="app-badge" href="https://bit.ly/3wPzhwn" aria-label="Get Renegade Air on Google Play">
+              <img src="https://storage.aerocrs.com/329/system/googleplay.png" alt="Get it on Google Play" />
+            </a>
+          </div>
+        </section>
+        <section class="footer-column" id="information">
+          <h2>Flight Information</h2>
+          <a href="#information">Dangerous Goods</a>
+          <a href="#information">Checkin Policy</a>
+          <a href="#information">Ticket Terms and Conditions</a>
+          <a href="#information">Baggage Terms</a>
+        </section>
+        <section class="footer-column" id="services">
+          <h2>Our Services</h2>
+          <a href="#main">Scheduled Flights</a>
+          <a href="#contact">Private Charters</a>
+          <a href="#contact">ACMI Leasing</a>
+          <a href="#contact">Private Charters</a>
+        </section>
+        <section class="footer-column contact-column" id="contact">
+          <h2>Lets Connect!</h2>
+          <a href="https://wa.me/254738021474">Call Center: 0738 021 474</a>
+          <a href="https://wa.me/254738021474">Kisumu: 0738 021 474</a>
+          <a href="https://wa.me/254738021474">Wajir: 0738 021 474</a>
+          <a href="https://wa.me/254738021474">Parcel Office: 0738 021 474</a>
+          <a href="https://wa.me/254738021474">Emergency: 0738 021 474</a>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Flyrenegadeair</span>
+      </div>
+      <div class="footer-legal">
+        <span>© All rights reserved</span>
+        <img src="https://storage.aerocrs.com/0/system/poweredbyaerocrs.png" alt="Powered by AeroCRS" />
+      </div>
+    </footer>
+
+    <aside class="support-widget" aria-label="Customer support">
+      <div class="support-popover" id="supportPopover">
+        <button class="support-close" id="supportClose" type="button" aria-label="Close support message">×</button>
+        <p>Welcome to Flyrenegade Air, if you need help, message us on WhatsApp at <a href="https://wa.me/254738021474"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#whatsapp-mark"/></svg><span>0738 021 474</span></a>. We are online and ready to help.</p>
+      </div>
+      <button class="support-launcher" id="supportLauncher" type="button" aria-expanded="true" aria-controls="supportPopover">
+        <span class="online-dot"></span> Online <span class="support-count">1</span>
+      </button>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>
