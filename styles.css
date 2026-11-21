@@ -903,11 +903,10 @@ gap: 10px;
 .support-popover {
   position: absolute;
   right: 0;
-  bottom: 70px;
-  width: 360px;
-  height: 226px;
-  min-height: 226px;
-  padding: 16px;
+  bottom: 62px;
+  width: 300px;
+  min-height: 0;
+  padding: 14px 32px 14px 14px;
   border-radius: 12px;
   color: #292d29;
   background: var(--paper);
@@ -924,7 +923,7 @@ gap: 10px;
   background: var(--paper);
   transform: rotate(45deg);
 }
-.support-popover p { margin: 0; font-size: 14px; line-height: 1.55; }
+.support-popover p { margin: 0; font-size: 13px; line-height: 1.45; }
 .support-popover a { text-decoration: underline; }
 .support-close {
   position: absolute;
@@ -941,8 +940,8 @@ gap: 10px;
 }
 .support-launcher {
   position: relative;
-  width: 184px;
-  height: 64px;
+  width: 160px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1276,7 +1275,7 @@ gap: 10px;
   .footer-legal span { bottom: 0; font-size: 12px; line-height: 17px; }
   .footer-legal img { bottom: 17px; }
   .support-widget { right: 10px; bottom: 0; }
-  .support-popover { width: min(360px, calc(100vw - 30px)); }
+  .support-popover { width: min(300px, calc(100vw - 30px)); }
 }
 @media (max-width: 360px) {
   .utility-bar { padding-right: 12px; padding-left: 12px; font-size: 11px; }
