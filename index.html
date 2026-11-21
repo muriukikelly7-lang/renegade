@@ -160,25 +160,27 @@
             <div class="route-fields">
               <label class="airport-field">
                 <span>From</span>
-                <input id="flightFrom" name="from" type="text" list="airportOptions" autocomplete="off" required aria-label="From" />
+                <select id="flightFrom" name="from" required aria-label="From">
+                  <option value="" selected disabled>Select city</option>
+                  <option value="Nairobi">Nairobi</option>
+                  <option value="Eldoret">Eldoret</option>
+                  <option value="Kisumu">Kisumu</option>
+                  <option value="Mombasa">Mombasa</option>
+                  <option value="Homabay">Homabay</option>
+                  <option value="Wajir">Wajir</option>
+                  <option value="Maasai Mara">Maasai Mara</option>
+                </select>
               </label>
               <button class="swap-button" id="swapRoute" type="button" aria-label="Swap departure and destination" disabled>
                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 7a8 8 0 0 0-13-2L5 7m0-4v4h4m-5 6a8 8 0 0 0 13 2l2-2m0 4v-4h-4"></path></svg>
               </button>
               <label class="airport-field">
                 <span>To</span>
-                <input id="flightTo" name="to" type="text" list="airportOptions" autocomplete="off" required aria-label="To" />
+                <select id="flightTo" name="to" required aria-label="To" disabled>
+                  <option value="" selected disabled>Select city</option>
+                </select>
               </label>
             </div>
-            <datalist id="airportOptions">
-              <option value="Nairobi"></option>
-              <option value="Eldoret"></option>
-              <option value="Kisumu"></option>
-              <option value="Mombasa"></option>
-              <option value="Homabay"></option>
-              <option value="Wajir"></option>
-              <option value="Maasai Mara"></option>
-            </datalist>
 
             <div class="date-fields">
               <label class="date-field">

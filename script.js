@@ -221,9 +221,10 @@ document.querySelectorAll(".fare-option").forEach((option) => {
   option.addEventListener("click", () => {
     selectTab(flightTab);
     fromField.value = "Nairobi";
-    toField.value = option.dataset.destination;
     tripType.value = "oneway";
     updateTripType();
+    updateDestinationAvailability();
+    toField.value = option.dataset.destination;
     updateDestinationAvailability();
     bookingShell.scrollIntoView({ behavior: "smooth", block: "center" });
   });
@@ -235,8 +236,16 @@ function updateDestinationAvailability() {
   const origin = fromField.value.trim().toLowerCase();
   const destinations = routes[origin] || [];
   const destination = toField.value.trim().toLowerCase();
+  toField.replaceChildren(new Option("Select city", ""));
+  destinations.forEach((city) => {
+    const label = city.replace(/\b\w/g, (letter) => letter.toUpperCase());
+    toField.add(new Option(label, label));
+  });
+  toField.disabled = destinations.length === 0;
 
-  if (destinations.length && destination && !destinations.includes(destination)) toField.value = "";
+  toField.value = destinations.includes(destination)
+    ? destination.replace(/\b\w/g, (letter) => letter.toUpperCase())
+    : "";
   swapButton.disabled = !destinations.includes(destination);
   updateFareEstimate();
 }
@@ -264,14 +273,14 @@ function updateFareEstimate() {
     : "Select a supported route to see an estimated fare.";
 }
 
-fromField.addEventListener("input", updateDestinationAvailability);
-toField.addEventListener("input", updateDestinationAvailability);
+fromField.addEventListener("change", updateDestinationAvailability);
 toField.addEventListener("change", updateDestinationAvailability);
 
 swapButton.addEventListener("click", () => {
   if (swapButton.disabled) return;
   const origin = fromField.value;
   fromField.value = toField.value;
+  updateDestinationAvailability();
   toField.value = origin;
   updateDestinationAvailability();
 });

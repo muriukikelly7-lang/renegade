@@ -377,20 +377,21 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   font-size: 16px;
   font-weight: 700;
 }
-.airport-field input {
+.airport-field select {
   position: absolute;
   top: 20px;
   left: 14px;
   width: 160px;
   height: 30px;
-  padding: 0;
+  padding: 0 18px 0 0;
   border: 0;
   outline: 0;
   color: #303630;
   background: transparent;
   font-size: 14px;
+  cursor: pointer;
 }
-.airport-field input:disabled { background: transparent; }
+.airport-field select:disabled { cursor: default; }
 .swap-button {
   position: absolute;
   z-index: 1;
@@ -1064,7 +1065,7 @@ gap: 10px;
   }
   .airport-field { width: 309px; padding-top: 4px; }
   .airport-field span { line-height: 24px; }
-  .airport-field input {
+  .airport-field select {
     top: 19px;
     width: 240px;
     height: 32px;
@@ -1136,7 +1137,7 @@ gap: 10px;
     gap: 10px;
   }
   .airport-field { width: 100%; }
-  .airport-field input { width: calc(100% - 28px); }
+  .airport-field select { width: calc(100% - 28px); }
   .swap-button { left: calc(50% - 12px); }
 }
 @media (min-width: 901px) {
@@ -1203,7 +1204,7 @@ gap: 10px;
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  .airport-field input { top: 20px; width: min(280px, calc(100% - 28px)); }
+  .airport-field select { top: 20px; width: min(280px, calc(100% - 28px)); }
   .swap-button {
     top: 44px;
     right: 19px;
