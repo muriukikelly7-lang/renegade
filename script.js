@@ -68,7 +68,7 @@ const routes = { nairobi: Object.keys(oneWayFareByCity) };
 Object.keys(oneWayFareByCity).forEach((city) => {
   routes[city] = ["nairobi"];
 });
-const whatsappNumber = "254738021474";
+const whatsappNumber = "254762108773";
 
 function closeMobileNav() {
   primaryNav.classList.remove("open");
