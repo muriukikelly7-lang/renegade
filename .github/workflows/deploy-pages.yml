@@ -33,6 +33,7 @@ jobs:
           mkdir -p dist
           cp index.html script.js styles.css dist/
           cp -R images dist/images
+          cp CNAME dist/
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
